@@ -1,0 +1,19 @@
+<ion-view view-title="Configure Device" ng-init="Init()">
+  <ion-content class="padding">
+
+	<div class="list list-inset">
+	  <label class="item item-input">
+		<!-- <input type="text" ng-model="config.wifi_ssid" placeholder="Enter WiFi SSID"> -->
+	<select ng-model="config.wifi_ssid">
+		<option value="" disabled>Select SSID</option>
+	  <option ng-repeat="router in routers track by $index" value="{{router.SSID}}" >{{router.SSID}}</option>
+	</select>
+
+	  </label>
+	  <label class="item item-input">
+		<input type="text" ng-model="config.wifi_key" placeholder="Enter Password">
+	  </label>
+	</div>
+	<button class="button button-full button-balanced" ng-click="SaveDeviceConfig()">Save Settings</button>
+  </ion-content>
+</ion-view>
